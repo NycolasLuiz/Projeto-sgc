@@ -3,3 +3,8 @@ class produto:
         self.nome = nome_produto
         self.valor = valor_produto
 
+def to_dict(self):
+    return{
+        "produto": self.nome,
+        "valor": self.valor
+    }
