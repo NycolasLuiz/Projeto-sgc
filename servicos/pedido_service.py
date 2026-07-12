@@ -1,29 +1,24 @@
-from modelos.cliente import Cliente
-from modelos.pedido import Pedido
-from modelos.produto import Produto
+from modelos.cliente import cliente
+from modelos.pedido import pedido
+from modelos.produto import produto
 
 
 def novo_pedido():
+    nome = input("Nome: ")
+    telefone = int(input("Telefone: "))
+    novo_cliente = cliente(nome, telefone)
 
-    nome = input('Nome do cliente: ')
-    telefone = input('Telefone do cliente: ')
+    nome_produto = input("Produto: ")
+    valor_produto = float(input("Valor: "))
+    novo_produto = produto(nome_produto, valor_produto)
 
-    cliente = Cliente(nome, telefone)
+    periodo_entrega = input("Manhã/Tarde/Noite: ")
+    forma_pagamento = input("Débito,Crédito,Pix: ")
 
-    nome_produto = input('Nome do Produto: ')
-    valor_produto = float(input('Valor do produto: '))
-
-    produto = Produto(nome_produto, valor_produto)
-
-    periodo_entrega = input('Período de entrega (Manhã/Tarde/Noite): ')
-    pagamento = input('Forma de pagamento (Débito/Crédito/Pix): ')
-
-    pedido = Pedido(
-        cliente,
-        produto,
-        valor_produto,
+    meu_pedido = pedido(
+        novo_cliente,
+        novo_produto,
         periodo_entrega,
-        pagamento
+        forma_pagamento
     )
-
-    return pedido
+    return meu_pedido
