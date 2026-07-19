@@ -8,3 +8,6 @@ def salvar(cliente):
         existe_cliente.append(dados_cleintes)
     with open(PASTA, "w", encoding="utf-8")as arquivos:
         json.dump (existe_cliente, arquivos, indent=4, ensure_ascii=False) 
+        
+
+            
