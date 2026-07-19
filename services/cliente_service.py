@@ -5,3 +5,7 @@ def cadastrar_cliente(nome, telefone):
     cliente = Cliente(nome,telefone)
     cliente_repository.salvar(cliente)
     return cliente
+
+def listar_clientes():
+    listagem = cliente_repository.listar_clientes()
+    return listagem
