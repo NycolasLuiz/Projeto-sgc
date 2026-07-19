@@ -63,6 +63,12 @@ def busca ():
         else: 
             if opcao == '1':
                 dados = cliente_service.listar_clientes()
+                print("LISTA DE CLIENTES: ")
+                for clientes in dados:
+                    print('-'*30)
+                    print(f"ID: {clientes['id']}")
+                    print(f"NOME: {clientes['nome']}")
+                    print(f"TELEFONE: {clientes['telefone']}")
             elif  opcao == '2':
                 user = input ("INFORME O ID: ")
                 dados = cliente_service.buscar_id(user)
@@ -84,6 +90,7 @@ def busca ():
                 if validacao == "1":
                     continue
                 elif validacao == "0":
+                    print("SAINDO...")
                     break
             
                 

@@ -9,5 +9,8 @@ def salvar(cliente):
     with open(PASTA, "w", encoding="utf-8")as arquivos:
         json.dump (existe_cliente, arquivos, indent=4, ensure_ascii=False) 
         
-
-            
+def listar_clientes ():
+    PASTA = "data/clientes.json"
+    with open ( PASTA,"r",encoding="utf-8") as arquivos:
+        clientes = json.load(arquivos)
+        return clientes
