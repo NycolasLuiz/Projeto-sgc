@@ -1,3 +1,3 @@
-from menu.menu_clientes import cliente_crud
+from menu.menu_clientes import menu_principal
 from services import cliente_service
-cliente_crud()
+menu_principal()
