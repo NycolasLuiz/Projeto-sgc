@@ -1,4 +1,3 @@
-from menu.menu_clientes import busca
-from menu.menu_principal import cadastro
+from menu.menu_clientes import cliente_crud
 from services import cliente_service
-busca()
+cliente_crud()
