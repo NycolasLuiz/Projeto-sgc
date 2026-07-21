@@ -42,19 +42,14 @@ def listar_clientes():
 
     menu_secundario()
 
-
-def buscar_id():
-    user = input("INFORME O ID: ")
-
-    dados = cliente_service.buscar_id(user)
-
-    menu_secundario()
-
-
-def buscar_telefone():
-    user = input("INFORME O TELEFONE (DDD)999999999: ")
-
-    dados = cliente_service.buscar_telefone(user)
+def buscar_telefone_cliente():
+    telefone = input("INFORME O TELEFONE (DDD)999999999: ")
+    telefone_cliente = cliente_service.cliente_telefone(telefone)
+    if telefone_cliente:
+        print(f"NOME: {telefone_cliente['nome']}")
+        print(f"TELEFONE: {telefone_cliente['telefone']}")
+    else:
+        print("ERRO! CLIENTE NÃO ENCONTRADO...")
 
     menu_secundario()
 
@@ -68,8 +63,9 @@ def menu_principal():
         print("=" * 62)
         print("1 - CADASTRAR CLIENTE")
         print("2 - LISTAR CLIENTES")
-        print("3 - BUSCAR CLIENTE POR ID")
-        print("4 - BUSCAR CLIENTE POR TELEFONE")
+        print("3 - BUSCAR CLIENTE POR TELEFONE")
+        print("4 - ATUALIZAR DADOS/CLIENTE")
+        print("5 - DELETAR CLIENTE")
         print("0 - SAIR")
         print("=" * 62)
 
@@ -82,11 +78,14 @@ def menu_principal():
             listar_clientes()
 
         elif opcao == "3":
-            buscar_id()
+            buscar_telefone_cliente()
 
         elif opcao == "4":
-            buscar_telefone()
-
+            print("FUNÇÃO INDEFINIDA AINDA")
+        
+        elif opcao == "5":
+            print("FUNÇÃO INDEFINIDA AINDA")
+            
         elif opcao == "0":
             print("Saindo...")
             break
