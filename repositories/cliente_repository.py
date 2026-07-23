@@ -30,16 +30,3 @@ def buscar_telefone(telefone):
                 if telefone_cliente.get("telefone") == telefone:
                     return telefone_cliente
             return None    
-
-def atualizar_cliente(identifiador,
-        novo_nome,
-        novo_telefone):
-    PASTA = "data/clientes.json"
-    with open (PASTA,"r",encoding="utf-8") as arquivos:
-            clientes = json.load(arquivos)
-            for cliente in clientes:
-                if cliente['id'] == identifiador:
-                    cliente['nome'] == novo_nome
-                    cliente['telefone'] == novo_telefone
-                with open(PASTA,"w",encoding="utf-8") as arquivos:
-                    json.dump(novo_nome,novo_telefone,indent=4,ensure_ascii=False)

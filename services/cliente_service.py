@@ -13,18 +13,3 @@ def listar_clientes():
 def cliente_telefone(telefone):
     return cliente_repository.buscar_telefone(telefone)
 
-def recadastrando(identifiador, novo_nome, novo_telefone):
-    cliente = cliente_repository.buscar_id(identifiador)
-
-    if not cliente:
-        return False
-
-    return cliente_repository.atualizar_cliente(
-        identifiador,
-        novo_nome,
-        novo_telefone
-    )
-    if cliente:
-        print("CADASTRO ALTERADO")
-    else:
-        print("ERRO!! ID NÃO ENCONTRADO")

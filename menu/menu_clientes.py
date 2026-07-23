@@ -55,21 +55,24 @@ def buscar_telefone_cliente():
     
     
 def alterar_cadastro():
-    identificador = input("INFORME O ID DO CLIENTE: ")
+    id_cliente = input("INFORME O ID DO CLIENTE: ")
 
     novo_nome = input("INFORME NOVAMENTE O NOME DO CLIENTE: ")
     novo_telefone = input("INFORME NOVAMENTE O TELEFONE DO CLIENTE: ")
 
     resultado = cliente_service.recadastrando(
-        identificador,
+        id_cliente,
         novo_nome,
         novo_telefone
     )
-
+    
     if resultado:
-        print("CADASTRO ALTERADO")
+        print(f"CADASTRO ATUALIZADO!{resultado[novo_nome]}-{resultado[novo_telefone]}")
     else:
-        print("ERRO!! ID NÃO ENCONTRADO")
+        print("ERRO, ID NÃO ENCONTRADO")
+        
+    menu_secundario()
+        
 def menu_principal():
 
     while True:
@@ -97,7 +100,7 @@ def menu_principal():
             buscar_telefone_cliente()
 
         elif opcao == "4":
-            print("FUNÇÃO INDEFINIDA AINDA")
+            alterar_cadastro()
         
         elif opcao == "5":
             print("FUNÇÃO INDEFINIDA AINDA")
