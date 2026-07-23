@@ -30,3 +30,29 @@ def buscar_telefone(telefone):
                 if telefone_cliente.get("telefone") == telefone:
                     return telefone_cliente
             return None    
+
+def atualiza_cadastro(id_cliente,novo_nome,novo_telefone):
+    
+    PASTA = "data/clientes.json"
+    with open(PASTA,"r",encoding="utf-8") as arquivos:
+        
+        clientes = json.load(arquivos)
+    for cliente in clientes:
+        if cliente ['id'] == id_cliente:
+            cliente['nome'] = novo_nome
+            cliente['telefone'] = novo_telefone
+            
+            
+            with open (PASTA,"w", encoding="utf-8") as arquivos:
+                json.dump(clientes, arquivos, ensure_ascii=False, indent=4)
+                return cliente
+    return None        
+    
+    
+def delt_cliente(id_cliente):
+    PASTA = "data/clientes.json"
+    with open(PASTA,"r",encoding="utf-8") as arquivos:
+        clientes = json.load(arquivos)
+        dados_atualizados = [ clientes for cliente in clientes != id_cliente ['id']]
+        with open(PASTA,"w",encoding="utf-8") as arquivos:
+            json.dump(dados_atualizados,arquivos, indent=4, ensure_ascii=False)
