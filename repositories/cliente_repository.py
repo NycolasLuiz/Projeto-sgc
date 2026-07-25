@@ -53,6 +53,11 @@ def delt_cliente(id_cliente):
     PASTA = "data/clientes.json"
     with open(PASTA,"r",encoding="utf-8") as arquivos:
         clientes = json.load(arquivos)
-        dados_atualizados = [ clientes for cliente in clientes != id_cliente ['id']]
-        with open(PASTA,"w",encoding="utf-8") as arquivos:
-            json.dump(dados_atualizados,arquivos, indent=4, ensure_ascii=False)
+        dados_atualizados = [cliente for cliente in clientes if  cliente['id']!= id_cliente]
+        if dados_atualizados != clientes:
+            with open(PASTA,"w",encoding="utf-8") as arquivos:
+                json.dump(dados_atualizados,arquivos, indent=4, ensure_ascii=False)
+                return True
+        return False       
+   
+            

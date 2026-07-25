@@ -82,7 +82,7 @@ def deletar_cadastro():
         print("CADASTRO DELETADO")
     else:
         print("ERRO, ID NÃO ENCONTRADO")    
-        
+    menu_secundario()      
     
         
 def menu_principal():
@@ -115,7 +115,7 @@ def menu_principal():
             alterar_cadastro()
         
         elif opcao == "5":
-            print("FUNÇÃO INDEFINIDA AINDA")
+            deletar_cadastro()
             
         elif opcao == "0":
             print("Saindo...")
