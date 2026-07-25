@@ -1,3 +1,28 @@
+from repositories import produto_repository
+def cadastra_produto():
+    print("=" * 62)
+    nome = input("NOME PRODUTO: ").strip()
+    if not nome:
+        print("ERRO!")
+        return
+    
+    try: preco = float (input ("VALOR PRODUTO: "))
+    except ValueError as erro:
+        print("ERRO, DIGITE UM NÚMERO!")
+        return 
+    
+    if  preco <= 0:
+        print("ERRO!")
+        return
+    print("=" * 62)
+    novo_produto = produto_repository.salvar_produto(nome,preco)
+    if novo_produto:
+        print(f"PRODUTO {novo_produto['nome']} FOI CADASTRADO!")
+    else:
+        print("ERRO!!")
+    menu_secundario()
+    
+    
 
 def menuDeProdutos():
     while True:

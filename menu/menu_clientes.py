@@ -7,12 +7,12 @@ def cadastro_clientes():
 
         nome = input("Nome: ").strip()
         if not nome:
-            print("ERRO! Nome inválido.")
+            print("ERRO!")
             return
 
         telefone = input("Telefone: ").strip()
         if not telefone:
-            print("ERRO! Telefone inválido.")
+            print("ERRO!.")
             return
 
         print("=" * 62)
