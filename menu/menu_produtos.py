@@ -8,7 +8,7 @@ def menuDeProdutos():
         print("-----------3 ALTERAR PRODUTO----------------------")
         print("-----------4 EXCLUIR PRODUTO----------------------")
         print("-----------0 SAIR-------------------------------- ")
-
+        print("="*62)
         opcao  = input("INFORME A OPÇÃO DESEJADA: ").strip
 
         if opcao == "1":
