@@ -1,8 +1,7 @@
-import uuid
-
 class Produto:
-    def __init__(self, nome, valor):
-        self.id = str(uuid.uuid4())
+    def __init__(self,id, nome, valor):
+        
+        self.id = id
         self.nome = nome
         self.valor = valor
 
@@ -11,4 +10,4 @@ class Produto:
             "id": self.id,
             "nome": self.nome,
             "valor": self.valor
-        }
+        } 
