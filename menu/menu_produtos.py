@@ -1,4 +1,5 @@
-from repositories import produto_repository
+from services import produto_service
+
 def cadastra_produto():
     print("=" * 62)
     nome = input("NOME PRODUTO: ").strip()
@@ -6,7 +7,7 @@ def cadastra_produto():
         print("ERRO!")
         return
     
-    try: preco = float (input ("VALOR PRODUTO: "))
+    try: preco = float(input("VALOR PRODUTO: "))
     except ValueError as erro:
         print("ERRO, DIGITE UM NÚMERO!")
         return 
@@ -15,9 +16,11 @@ def cadastra_produto():
         print("ERRO!")
         return
     print("=" * 62)
-    novo_produto = produto_repository.salvar_produto(nome,preco)
+    
+    novo_produto = produto_service.cadastroDeproduto(nome,preco)
+    
     if novo_produto:
-        print(f"PRODUTO {novo_produto['nome']} FOI CADASTRADO!")
+        print(f"PRODUTO {novo_produto.nome} FOI CADASTRADO!")
     else:
         print("ERRO!!")
     menu_secundario()
@@ -34,10 +37,10 @@ def menuDeProdutos():
         print("-----------4 EXCLUIR PRODUTO----------------------")
         print("-----------0 SAIR-------------------------------- ")
         print("="*62)
-        opcao  = input("INFORME A OPÇÃO DESEJADA: ").strip
+        opcao  = input("INFORME A OPÇÃO DESEJADA: ").strip()
 
         if opcao == "1":
-            print("FUNÇÃO EM DESENVOLVIMENTO")
+            cadastra_produto()
         elif opcao == "2":
             print("FUNÇÃO EM DESENVOLVIMENTO")
         elif opcao == "3":

@@ -6,4 +6,16 @@ def carregar_produto():
         try: produtos = json.load(arquivo)
         except json.JSONDecodeError:
             produtos = []
+    return produtos     
+
+def salva_produto(produtos):
+    PASTA = "data/produtos.json"
+    with open(PASTA,'w',encoding='utf-8') as arquivos:
+        json.dump(produtos,arquivos,indent=4,ensure_ascii=False)   
+
             
+def cadastroNovoProduto(novoProduto):
+    produtos_novos = novoProduto.to_dict()
+    produtos = carregar_produto()
+    produtos.append(produtos_novos)
+    salva_produto(produtos)

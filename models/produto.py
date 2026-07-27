@@ -1,13 +1,15 @@
+import uuid
+
 class Produto:
-    def __init__(self,id, nome, valor):
+    def __init__(self,nome, preco):
         
-        self.id = id
+        self.id = str(uuid.uuid4())
         self.nome = nome
-        self.valor = valor
+        self.preco = preco
 
     def to_dict(self):
         return {
             "id": self.id,
             "nome": self.nome,
-            "valor": self.valor
+            "preco": self.preco
         } 
