@@ -19,3 +19,7 @@ def cadastroNovoProduto(novoProduto):
     produtos = carregar_produto()
     produtos.append(produtos_novos)
     salva_produto(produtos)
+
+def listagemDePodutos():
+    dados = carregar_produto()
+    return dados

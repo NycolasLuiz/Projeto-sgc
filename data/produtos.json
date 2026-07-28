@@ -13,5 +13,10 @@
         "id": "4b6ad7a8-9482-424a-88f0-f9e5e0ffd064",
         "nome": "chuveiro",
         "preco": 33.5
+    },
+    {
+        "id": "8eb652e5-e4d0-43e1-970b-137fe924f119",
+        "nome": "cadeira",
+        "preco": 400.5
     }
 ]

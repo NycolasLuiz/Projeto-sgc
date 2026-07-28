@@ -20,12 +20,19 @@ def cadastra_produto():
     novo_produto = produto_service.cadastroDeproduto(nome,preco)
     
     if novo_produto:
-        print(f"PRODUTO {novo_produto.nome} FOI CADASTRADO!")
+        print(f"PRODUTO: {novo_produto.nome} FOI CADASTRADO!")
     else:
         print("ERRO!!")
     menu_secundario()
-    
-    
+
+def buscar_produtos():
+    print("=" * 62)
+    listagem = produto_service.lista_produtos()
+   
+    for produtos in listagem:
+        print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
+        print('_'*62)
+    menu_secundario() 
 
 def menuDeProdutos():
     while True:
@@ -42,7 +49,7 @@ def menuDeProdutos():
         if opcao == "1":
             cadastra_produto()
         elif opcao == "2":
-            print("FUNÇÃO EM DESENVOLVIMENTO")
+            buscar_produtos()
         elif opcao == "3":
             print("FUNÇÃO EM DESENVOLVIMENTO") 
         elif opcao == "4": 
