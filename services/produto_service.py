@@ -12,3 +12,7 @@ def lista_produtos():
 
 def procuraDeproduto(nome_produto):
     return produto_repository.puxando_produto(nome_produto)
+
+def alteraProduto(id_produto,novo_nome,novo_preco):
+    atualiza = produto_repository.modifica_produto(id_produto,novo_nome,novo_preco)
+    return atualiza

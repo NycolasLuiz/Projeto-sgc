@@ -43,6 +43,20 @@ def buscar_produto():
         print("PRODUTO NÃO ENCONTRADO")
     menu_secundario()
 
+def altera_produto():
+    id_produto = input("INFORME O ID DO PODUTO: ")
+    novo_nome = input("NOVO NOME:  ")
+    novo_preco = input("NOVO PREÇO:  ")
+
+    atualizacao = produto_service.alteraProduto(id_produto,novo_nome,novo_preco)
+
+    if atualizacao:
+        print(f"NOME:{atualizacao['nome']}\n {atualizacao['preco']}")
+    else:
+        print("ERRO, PRODUTO NÃO ENCONTRADO!")
+
+    menu_secundario()
+
 def menuDeProdutos():
     while True:
         print("="*62)
@@ -63,7 +77,7 @@ def menuDeProdutos():
         elif opcao == "3":
             buscar_produto()
         elif opcao == "4": 
-            print("FUNÇÃO EM DESENVOLVIMENTO")
+            altera_produto()
         elif opcao == "5":
             print("FUNÇÃO EM DESENVOLVIMENTO")
         elif opcao == "0":

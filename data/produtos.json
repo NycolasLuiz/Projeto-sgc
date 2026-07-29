@@ -1,22 +1,5 @@
-[
-    {
-        "id": "8b416331-c983-4a13-b056-6b90360932e8",
-        "nome": "cadeira",
-        "preco": 500.0
-    },
-    {
-        "id": "28acd4e3-6e31-4179-96e0-a25d2745250d",
-        "nome": "cadeira",
-        "preco": 500.0
-    },
-    {
-        "id": "4b6ad7a8-9482-424a-88f0-f9e5e0ffd064",
-        "nome": "chuveiro",
-        "preco": 33.5
-    },
-    {
-        "id": "8eb652e5-e4d0-43e1-970b-137fe924f119",
-        "nome": "cadeira",
-        "preco": 400.5
-    }
-]
+{
+    "id": "8b416331-c983-4a13-b056-6b90360932e8",
+    "nome": "celular",
+    "preco": "45"
+}

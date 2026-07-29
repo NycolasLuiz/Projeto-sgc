@@ -30,3 +30,15 @@ def puxando_produto(nome_produto):
         if produto['nome'] == nome_produto:
             return produto
     return False
+
+def modifica_produto(id_produto,novo_nome,novo_preco):
+    dados =  carregar_produto()
+
+    for produto in dados:
+
+        if produto['id'] == id_produto:
+            produto['nome'] = novo_nome
+            produto['preco'] = novo_preco
+            salva_produto(produto)
+            return produto
+    return False    
