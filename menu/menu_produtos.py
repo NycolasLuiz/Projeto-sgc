@@ -25,7 +25,7 @@ def cadastra_produto():
         print("ERRO!!")
     menu_secundario()
 
-def buscar_produtos():
+def leitura_produtos():
     print("=" * 62)
     listagem = produto_service.lista_produtos()
    
@@ -34,14 +34,24 @@ def buscar_produtos():
         print('_'*62)
     menu_secundario() 
 
+def buscar_produto():
+    nome_produto = input ("INFORME O NOME DO PRODUTOS: ")
+    retorno_produto = produto_service.procuraDeproduto(nome_produto)
+    if retorno_produto:
+        print (f"INFORMAÇÕES: {retorno_produto['nome']}\n {retorno_produto['preco']} ")
+    else: 
+        print("PRODUTO NÃO ENCONTRADO")
+    menu_secundario()
+
 def menuDeProdutos():
     while True:
         print("="*62)
         print("-----------ESCOLHA A OPÇÃO DESEJADA---------------")
         print("-----------1 CADASTRAR PRODUTO--------------------")
         print("-----------2 MOSTRAR PRODUTOS DISPONÍVEIS---------")
-        print("-----------3 ALTERAR PRODUTO----------------------")
-        print("-----------4 EXCLUIR PRODUTO----------------------")
+        print("-----------3 PESQUISAR PRODUTO--------------------")
+        print("-----------4 ALTERAR PRODUTO----------------------")
+        print("-----------5 EXCLUIR PRODUTO----------------------")
         print("-----------0 SAIR-------------------------------- ")
         print("="*62)
         opcao  = input("INFORME A OPÇÃO DESEJADA: ").strip()
@@ -49,10 +59,12 @@ def menuDeProdutos():
         if opcao == "1":
             cadastra_produto()
         elif opcao == "2":
-            buscar_produtos()
+            leitura_produtos()
         elif opcao == "3":
-            print("FUNÇÃO EM DESENVOLVIMENTO") 
+            buscar_produto()
         elif opcao == "4": 
+            print("FUNÇÃO EM DESENVOLVIMENTO")
+        elif opcao == "5":
             print("FUNÇÃO EM DESENVOLVIMENTO")
         elif opcao == "0":
             print("SAINDO....")

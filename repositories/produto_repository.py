@@ -23,3 +23,10 @@ def cadastroNovoProduto(novoProduto):
 def listagemDePodutos():
     dados = carregar_produto()
     return dados
+
+def puxando_produto(nome_produto):
+    produtos = carregar_produto()
+    for produto in produtos:
+        if produto['nome'] == nome_produto:
+            return produto
+    return False

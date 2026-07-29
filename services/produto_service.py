@@ -9,3 +9,6 @@ def cadastroDeproduto(nome,preco):
 def lista_produtos():
     listagem = produto_repository.listagemDePodutos()
     return listagem
+
+def procuraDeproduto(nome_produto):
+    return produto_repository.puxando_produto(nome_produto)
