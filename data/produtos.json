@@ -1,5 +1,12 @@
-{
-    "id": "8b416331-c983-4a13-b056-6b90360932e8",
-    "nome": "celular",
-    "preco": "45"
-}
+[
+    {
+        "id": "3df42179-db0e-4f1d-ad3c-891437b71f1d",
+        "nome": "chocolate",
+        "preco": 45.0
+    },
+    {
+        "id": "6a707894-4864-40f0-8a6b-d5c03a0e46c5",
+        "nome": "arroz",
+        "preco": "45"
+    }
+]
