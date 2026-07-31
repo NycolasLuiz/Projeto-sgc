@@ -1,20 +1,5 @@
 [
     {
-        "id": "3df42179-db0e-4f1d-ad3c-891437b71f1d",
-        "nome": "chocolate",
-        "preco": 45.0
-    },
-    {
-        "id": "6a707894-4864-40f0-8a6b-d5c03a0e46c5",
-        "nome": "arroz",
-        "preco": "45"
-    },
-    {
-        "id": "91b8e250-f232-4958-a134-288aa82c03cf",
-        "nome": "cadeira",
-        "preco": 59.0
-    },
-    {
         "id": "f7179f0f-be1b-4e8a-a188-d95ef45c82f5",
         "nome": "Carro",
         "preco": "5000"

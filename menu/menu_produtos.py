@@ -90,7 +90,7 @@ def menuDeProdutos():
         elif opcao == "4": 
             altera_produto()
         elif opcao == "5":
-            print("FUNÇÃO EM DESENVOLVIMENTO")
+            delet_produto()
         elif opcao == "0":
             print("SAINDO....")
             break

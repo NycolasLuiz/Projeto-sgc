@@ -17,3 +17,7 @@ def alteraProduto(id_produto,novo_nome,novo_preco):
     atualiza = produto_repository.modifica_produto(id_produto,novo_nome,novo_preco)
     return atualiza 
 
+def cancelaCadastro(id_produto):
+    atualiza =  produto_repository.apaga_produto(id_produto)
+    return atualiza
+
