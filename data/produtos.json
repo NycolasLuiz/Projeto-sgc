@@ -8,5 +8,20 @@
         "id": "6a707894-4864-40f0-8a6b-d5c03a0e46c5",
         "nome": "arroz",
         "preco": "45"
+    },
+    {
+        "id": "91b8e250-f232-4958-a134-288aa82c03cf",
+        "nome": "cadeira",
+        "preco": 59.0
+    },
+    {
+        "id": "f7179f0f-be1b-4e8a-a188-d95ef45c82f5",
+        "nome": "Carro",
+        "preco": "5000"
+    },
+    {
+        "id": "032db5ef-58ff-4414-a8f1-bd537153ffd7",
+        "nome": "computador",
+        "preco": 400.0
     }
 ]

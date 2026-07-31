@@ -56,6 +56,17 @@ def altera_produto():
         print("ERRO, PRODUTO NÃO ENCONTRADO!")
 
     menu_secundario()
+ 
+def delet_produto():
+    id_produto = input ("INFORME O ID DO PRODUTO: ")
+
+    remove = produto_service.cancelaCadastro(id_produto)
+    
+    if remove:
+        print("PRODUTO DELETADO COM SUCESSO!")
+    else:
+        print("ERRO, ID NÃO ENCONTRADO...")
+    menu_secundario()    
 
 def menuDeProdutos():
     while True:

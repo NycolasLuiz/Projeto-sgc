@@ -16,3 +16,4 @@ def procuraDeproduto(nome_produto):
 def alteraProduto(id_produto,novo_nome,novo_preco):
     atualiza = produto_repository.modifica_produto(id_produto,novo_nome,novo_preco)
     return atualiza 
+
