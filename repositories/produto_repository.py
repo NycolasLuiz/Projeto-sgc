@@ -42,3 +42,11 @@ def modifica_produto(id_produto,novo_nome,novo_preco):
             salva_produto(dados)
             return produtos 
     return None 
+
+def apaga_produto(id_produto):
+    produtos = carregar_produto()
+    atualizacao = [produto for produto in produtos if produto['id'] != id_produto]
+    if atualizacao != produtos:
+        salva_produto(atualizacao)
+        return True
+    return False
