@@ -85,22 +85,43 @@ def deletar_cadastro():
     menu_secundario()      
     
         
+def linha():
+    print("=" * 62)
+
+
+def cabecalho(titulo):
+    linha()
+    print(titulo.center(62))
+    linha()
+
+
+def rodape():
+    linha()
+
+
+def pedir_opcao():
+    rodape()
+    return input("OPÇÃO DESEJADA: ").strip()
+
+
+def mensagem(texto):
+    print(f"\n{texto}\n")
+
+
 def menu_principal():
 
     while True:
 
-        print("=" * 62)
-        print("                    MENU CLIENTES")
-        print("=" * 62)
+        cabecalho("MENU CLIENTES")
+
         print("1 - CADASTRAR CLIENTE")
         print("2 - LISTAR CLIENTES")
         print("3 - BUSCAR CLIENTE POR TELEFONE")
-        print("4 - ATUALIZAR DADOS/CLIENTE")
+        print("4 - ATUALIZAR DADOS DO CLIENTE")
         print("5 - DELETAR CLIENTE")
         print("0 - SAIR")
-        print("=" * 62)
 
-        opcao = input("OPÇÃO DESEJADA: ").strip()
+        opcao = pedir_opcao()
 
         if opcao == "1":
             cadastro_clientes()
@@ -113,35 +134,35 @@ def menu_principal():
 
         elif opcao == "4":
             alterar_cadastro()
-        
+
         elif opcao == "5":
             deletar_cadastro()
-            
+
         elif opcao == "0":
-            print("Saindo...")
+            mensagem("Saindo...")
             break
 
         else:
-            print("ERRO!! (ESCOLHA UMA OPÇÃO VÁLIDA)")
+            mensagem("ERRO! ESCOLHA UMA OPÇÃO VÁLIDA.")
 
 
 def menu_secundario():
 
     while True:
 
-        print("=" * 62)
+        cabecalho("MENU")
+
         print("1 - VOLTAR")
         print("0 - SAIR")
-        print("=" * 62)
 
-        opcao = input("OPÇÃO DESEJADA: ").strip()
+        opcao = pedir_opcao()
 
         if opcao == "1":
             return
 
         elif opcao == "0":
-            print("Saindo...")
+            mensagem("Saindo...")
             exit()
 
         else:
-            print("ERRO!! (ESCOLHA UMA OPÇÃO VÁLIDA)")
+            mensagem("ERRO! ESCOLHA UMA OPÇÃO VÁLIDA.")

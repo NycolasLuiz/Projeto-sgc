@@ -8,5 +8,10 @@
         "id": "032db5ef-58ff-4414-a8f1-bd537153ffd7",
         "nome": "computador",
         "preco": 400.0
+    },
+    {
+        "id": "080dfb30-5564-40df-b7e6-de1c18e54ef1",
+        "nome": "cadeira",
+        "preco": 45.0
     }
 ]

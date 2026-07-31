@@ -68,46 +68,76 @@ def delet_produto():
         print("ERRO, ID NÃO ENCONTRADO...")
     menu_secundario()    
 
+def linha():
+    print("=" * 62)
+
+
+def cabecalho(titulo):
+    linha()
+    print(titulo.center(62))
+    linha()
+
+
+def rodape():
+    linha()
+
+
+def pedir_opcao():
+    rodape()
+    return input("Digite a opção: ").strip()
+
+
+def mensagem(texto):
+    print(f"\n{texto}\n")
+
+
 def menuDeProdutos():
     while True:
-        print("="*62)
-        print("-----------ESCOLHA A OPÇÃO DESEJADA---------------")
-        print("-----------1 CADASTRAR PRODUTO--------------------")
-        print("-----------2 MOSTRAR PRODUTOS DISPONÍVEIS---------")
-        print("-----------3 PESQUISAR PRODUTO--------------------")
-        print("-----------4 ALTERAR PRODUTO----------------------")
-        print("-----------5 EXCLUIR PRODUTO----------------------")
-        print("-----------0 SAIR-------------------------------- ")
-        print("="*62)
-        opcao  = input("INFORME A OPÇÃO DESEJADA: ").strip()
+
+        cabecalho("MENU DE PRODUTOS")
+
+        print("1 - CADASTRAR PRODUTO")
+        print("2 - MOSTRAR PRODUTOS DISPONÍVEIS")
+        print("3 - PESQUISAR PRODUTO")
+        print("4 - ALTERAR PRODUTO")
+        print("5 - EXCLUIR PRODUTO")
+        print("0 - VOLTAR")
+
+        opcao = pedir_opcao()
 
         if opcao == "1":
             cadastra_produto()
+
         elif opcao == "2":
             leitura_produtos()
+
         elif opcao == "3":
             buscar_produto()
-        elif opcao == "4": 
+
+        elif opcao == "4":
             altera_produto()
+
         elif opcao == "5":
             delet_produto()
+
         elif opcao == "0":
-            print("SAINDO....")
+            mensagem("Voltando ao menu principal...")
             break
+
         else:
-            print("ERRO!!, ECOLHA UMA OPÇÃO VÁLIDA")
+            mensagem("ERRO! ESCOLHA UMA OPÇÃO VÁLIDA.")
 
 
 def menu_secundario():
 
     while True:
 
-        print("=" * 62)
+        cabecalho("MENU")
+
         print("1 - VOLTAR")
         print("0 - SAIR")
-        print("=" * 62)
 
-        opcao = input("OPÇÃO DESEJADA: ").strip()
+        opcao = pedir_opcao()
 
         if opcao == "1":
             return
@@ -117,4 +147,4 @@ def menu_secundario():
             exit()
 
         else:
-            print("ERRO!! (ESCOLHA UMA OPÇÃO VÁLIDA)")
+            mensagem("ERRO! ESCOLHA UMA OPÇÃO VÁLIDA.")
