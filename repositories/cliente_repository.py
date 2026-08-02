@@ -60,3 +60,8 @@ def delt_cliente(id_cliente):
         return False       
    
             
+def listar_clientes():
+    PASTA = "data/clientes.json"
+    with open(PASTA,"r",encoding="utf-8") as arquivos:
+        dados = json.load(arquivos)
+        return dados 
