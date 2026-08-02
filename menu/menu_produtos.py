@@ -9,6 +9,7 @@ def cadastra_produto():
     
     try: preco = float(input("VALOR PRODUTO: "))
     except ValueError as erro:
+        erro
         print("ERRO, DIGITE UM NÚMERO!")
         return 
     
@@ -46,8 +47,11 @@ def buscar_produto():
 def altera_produto():
     id_produto = input("INFORME O ID DO PODUTO: ")
     novo_nome = input("NOVO NOME:  ")
-    novo_preco = input("NOVO PREÇO:  ")
-
+    try:
+        novo_preco = float(input("NOVO PREÇO: "))
+    except ValueError:
+        print("Preço inválido.")
+        return
     atualizacao = produto_service.alteraProduto(id_produto,novo_nome,novo_preco)
 
     if atualizacao:

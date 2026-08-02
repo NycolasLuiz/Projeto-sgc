@@ -11,7 +11,17 @@
     },
     {
         "id": "080dfb30-5564-40df-b7e6-de1c18e54ef1",
+        "nome": "cadeira gamer",
+        "preco": "45"
+    },
+    {
+        "id": "ce6513fd-ce7b-44b3-8c77-5f354cad6c46",
         "nome": "cadeira",
         "preco": 45.0
+    },
+    {
+        "id": "a6cd7697-4ad9-425d-a2a3-e869c8e83cc7",
+        "nome": "carro gamer",
+        "preco": 45.5
     }
 ]
