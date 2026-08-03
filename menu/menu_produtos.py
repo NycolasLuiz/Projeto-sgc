@@ -16,9 +16,16 @@ def cadastra_produto():
     if  preco <= 0:
         print("ERRO!")
         return
+    
+    try: estoque = int(input("QUANTIDADE ESTOQUE: "))
+    except ValueError as erro:
+        erro
+        print("ERRO, DIGITE UM NÚMERO!")
+        return 
+    
     print("=" * 62)
     
-    novo_produto = produto_service.cadastroDeproduto(nome,preco)
+    novo_produto = produto_service.cadastroDeproduto(nome,preco,estoque)
     
     if novo_produto:
         print(f"PRODUTO: {novo_produto.nome} FOI CADASTRADO!")
