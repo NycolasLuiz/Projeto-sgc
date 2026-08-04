@@ -1,4 +1,3 @@
-import uuid
 
 class Produto:
     def __init__(self,id,nome, preco,estoque):

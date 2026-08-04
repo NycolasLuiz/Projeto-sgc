@@ -1,8 +1,8 @@
 from models.produto import Produto
 from repositories import produto_repository
 
-def cadastroDeproduto(nome,preco,estoque):
-    novo_produto = Produto(nome,preco,estoque)
+def cadastroDeproduto(id,nome,preco,estoque):
+    novo_produto = Produto(id,nome,preco,estoque)
     produto_repository.cadastroNovoProduto(novo_produto)
     return novo_produto
 

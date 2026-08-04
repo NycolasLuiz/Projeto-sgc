@@ -14,14 +14,15 @@ def cadastra_produto():
         return 
     
     if  preco <= 0:
-        print("ERRO!")
+        print("ERRO!")      
         return
     
     try: estoque = int(input("QUANTIDADE ESTOQUE: "))
     except ValueError as erro:
         erro
         print("ERRO, DIGITE UM NÚMERO!")
-        return 
+        return
+    
     
     print("=" * 62)
     
