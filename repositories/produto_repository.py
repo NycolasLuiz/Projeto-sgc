@@ -42,13 +42,13 @@ def puxando_produto(nome_produto):
 def modifica_produto(id_produto,novo_nome,novo_preco):
     dados =  carregar_produto()
 
-    for produtos in dados:
+    for produto in dados:
 
-        if produtos['id'] == id_produto:
-            produtos['nome'] = novo_nome
-            produtos['preco'] = novo_preco
+        if produto['id'] == id_produto:
+            produto['nome'] = novo_nome
+            produto['preco'] = novo_preco
             salva_produto(dados)
-            return produtos 
+            return produto 
     return None 
 
 def apaga_produto(id_produto):

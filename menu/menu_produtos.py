@@ -53,7 +53,7 @@ def buscar_produto():
     menu_secundario()
 
 def altera_produto():
-    id_produto = input("INFORME O ID DO PODUTO: ")
+    id_produto = int (input("INFORME O ID DO PODUTO: "))    
     novo_nome = input("NOVO NOME:  ")
     try:
         novo_preco = float(input("NOVO PREÇO: "))
@@ -70,7 +70,7 @@ def altera_produto():
     menu_secundario()
  
 def delet_produto():
-    id_produto = input ("INFORME O ID DO PRODUTO: ")
+    id_produto = int (input ("INFORME O ID DO PRODUTO: "))
 
     remove = produto_service.cancelaCadastro(id_produto)
     
