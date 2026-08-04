@@ -14,6 +14,9 @@ def cadastro_clientes():
         if not telefone:
             print("ERRO!.")
             return
+        elif not len(telefone) ==11:
+            print("ERRO!")
+            return    
 
         print("=" * 62)
 
