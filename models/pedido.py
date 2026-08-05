@@ -1,18 +1,16 @@
-import uuid
-
 class Pedido:
-    def __init__(self, cliente, produto, quantidade):
-        self.id = str(uuid.uuid4())
+    def __init__(self, id,cliente,itens_pedido,valor_total,data_pedido ):
+        self.id =id
         self.cliente = cliente
-        self.produto = produto
-        self.quantidade = quantidade
-        self.valor_total = produto.valor * quantidade
+        self.itens_pedido = itens_pedido
+        self.valor_total = valor_total
+        self.data_pedido = data_pedido
 
     def to_dict(self):
         return {
             "id": self.id,
-            "cliente": self.cliente.to_dict(),
-            "produto": self.produto.to_dict(),
-            "quantidade": self.quantidade,
-            "valor_total": self.valor_total
+            "cliente": self.cliente,
+            "itens_pedido": self.itens_pedido,
+            "valor_total": self.valor_total,
+            "data_pedido": self.data_pedido
         }
