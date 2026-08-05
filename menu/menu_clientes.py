@@ -10,10 +10,13 @@ def cadastro_clientes():
             print("ERRO!")
             return
 
-        telefone = input("Telefone: ").strip()
+        telefone = input("INFORME O TELEFONE (DDD)999999999: ").strip()
         if not telefone:
-            print("ERRO!.")
+            print("ERRO!")
             return
+        elif not len(telefone) == 11:
+            print("ERRO!")
+            return    
 
         print("=" * 62)
 
@@ -46,6 +49,7 @@ def buscar_telefone_cliente():
     telefone = input("INFORME O TELEFONE (DDD)999999999: ")
     telefone_cliente = cliente_service.cliente_telefone(telefone)
     if telefone_cliente:
+        print(f"ID: {telefone_cliente['id']}")
         print(f"NOME: {telefone_cliente['nome']}")
         print(f"TELEFONE: {telefone_cliente['telefone']}")
     else:
