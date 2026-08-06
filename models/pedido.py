@@ -1,6 +1,6 @@
 class Pedido:
-    def __init__(self, id,cliente,itens_pedido,valor_total,data_pedido,forma_pagamento):
-        self.id =id
+    def __init__(self, id_pedido,cliente,itens_pedido,valor_total,data_pedido,forma_pagamento):
+        self.id_pedido =id_pedido
         self.cliente = cliente
         self.itens_pedido = itens_pedido
         self.valor_total = valor_total
@@ -9,7 +9,7 @@ class Pedido:
 
     def to_dict(self):
         return {
-            "id": self.id,
+            "id_pedido": self.id_pedido,
             "cliente": self.cliente,
             "itens_pedido": self.itens_pedido,
             "valor_total": self.valor_total,
