@@ -21,7 +21,7 @@ def geradorDeId():#chamar função no serveces
 
 def cadastro_novoPedido(novoPedido):#usar o mesmo parametro no serveces
     novoPedidoDICT= novoPedido.to_dict()
-    registro_pedidos= carrega_pedidos()
+    registro_pedidos= carrega_pedidos() 
     registro_pedidos.append(novoPedidoDICT)
     salva_pedido(registro_pedidos)
 

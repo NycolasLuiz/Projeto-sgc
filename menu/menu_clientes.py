@@ -3,28 +3,28 @@ from services import cliente_service
 
 def cadastro_clientes():
     try:
-        print("=" * 62)
+            print("=" * 62)
 
-        nome = input("Nome: ").strip()
-        if not nome:
-            print("ERRO!")
-            return
+            nome = input("Nome: ").strip()
+            if not nome:
+                print("ERRO!")
+                return
 
-        telefone = input("INFORME O TELEFONE (DDD)999999999: ").strip()
-        if not telefone:
-            print("ERRO!")
-            return
-        elif not len(telefone) == 11:
-            print("ERRO!")
-            return    
+            telefone = input("INFORME O TELEFONE (DDD)999999999: ").strip()
+            if not telefone:
+                print("ERRO!")
+                return
+            elif not len(telefone) == 11:
+                print("ERRO!")
+                return    
 
-        print("=" * 62)
+            print("=" * 62)
 
-        novo_cliente = cliente_service.cadastrar_cliente(nome, telefone)
+            novo_cliente = cliente_service.cadastrar_cliente(nome, telefone)
 
-        print(f"Cliente: {novo_cliente.nome}, cadastro aprovado!")
+            print(f"Cliente: {novo_cliente.nome}, cadastro aprovado!")
 
-        menu_secundario()
+            menu_secundario()
 
     except ValueError as erro:
         print(erro)
