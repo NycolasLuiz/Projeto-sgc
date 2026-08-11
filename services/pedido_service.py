@@ -5,7 +5,7 @@ from repositories import produto_repository
 from datetime import date
 
 
-def cadastro_novoPedido(clienteTelefone,produto):
+def cadastro_novoPedido(clienteTelefone, produtos):
 
     id_pedido = pedido_repository.geradorDeId()
 
@@ -13,20 +13,31 @@ def cadastro_novoPedido(clienteTelefone,produto):
 
     busca_cliente = cliente_repository.buscar_telefone(clienteTelefone)
 
-    busca_produto = produto_repository.puxando_produto(produto)
-
     if not busca_cliente:
         return None
+
+    itens_pedido = []
+
+    for nome_produto in produtos:
+
+        busca_produto = produto_repository.puxando_produto(nome_produto)
+
+        if not busca_produto:
+            return None
+
+        itens_pedido.append(busca_produto)
+
+    valor_total = 0
 
     novoPedido = Pedido(
         id_pedido,
         busca_cliente,
-        busca_produto,
-        0,
-        data_Pedido,
-        None
+        itens_pedido,
+        valor_total,
+        data_Pedido
     )
 
     pedido_repository.cadastro_novoPedido(novoPedido)
 
     return novoPedido
+

@@ -1,8 +1,20 @@
 [
     {
-        "id": 1,
-        "nome": "produto/teste",
-        "preco": 4500.0,
-        "estoque": 5
+        "id": 2,
+        "nome": "carro vermelho",
+        "preco": 45.0,
+        "estoque": 3
+    },
+    {
+        "id": 3,
+        "nome": "carro azul",
+        "preco": 45.0,
+        "estoque": 3
+    },
+    {
+        "id": 4,
+        "nome": "carro preto",
+        "preco": 45.0,
+        "estoque": 3
     }
 ]
