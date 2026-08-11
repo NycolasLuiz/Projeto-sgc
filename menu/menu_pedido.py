@@ -3,7 +3,7 @@ from services import pedido_service
 
 def cadastro_novoPedido():
     
-    clienteTelefone = int(input("INFORME O TELEFONE DO CLIENTE: "))
+    clienteTelefone = (input("INFORME O TELEFONE DO CLIENTE: "))
     registroPedido = pedido_service.cadastro_novoPedido(clienteTelefone)
     if registroPedido:
         print("LOCALIZADO/SENDO IMPLEMENTADO"   )

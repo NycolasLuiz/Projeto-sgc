@@ -1,0 +1,14 @@
+[
+    {
+        "id_pedido": 1,
+        "cliente": {
+            "id": "c94f3019-07a1-4206-8320-712606228331",
+            "nome": "Nycolas",
+            "telefone": "47984934737"
+        },
+        "itens_pedido": [],
+        "valor_total": 0,
+        "data_pedido": "2026-08-10",
+        "forma_pagamento": null
+    }
+]
