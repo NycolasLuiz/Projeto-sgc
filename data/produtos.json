@@ -1,0 +1,8 @@
+[
+    {
+        "id": 1,
+        "nome": "produto/teste",
+        "preco": 4500.0,
+        "estoque": 5
+    }
+]
