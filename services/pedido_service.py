@@ -34,10 +34,15 @@ def cadastro_novoPedido(clienteTelefone, produtos):
         busca_cliente,
         itens_pedido,
         valor_total,
-        data_Pedido
+        data_Pedido,
+        None
     )
 
     pedido_repository.cadastro_novoPedido(novoPedido)
 
     return novoPedido
 
+#def busca_catalogo():
+#    listagem = produto_repository.listagemDePodutos()
+#    return listagem
+    

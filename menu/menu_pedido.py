@@ -31,3 +31,13 @@ def cadastro_novoPedido():
     else:
         print("NÃO FOI POSSÍVEL CADASTRAR O PEDIDO.")
 
+#def opcaoes_produtos():
+    
+#    print("=" * 62)
+#    listagem = pedido_service.lista_produtos()
+   
+#    for produtos in listagem:
+#        print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
+#        print('_'*62)
+
+
