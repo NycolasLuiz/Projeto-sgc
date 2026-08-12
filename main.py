@@ -1,6 +1,6 @@
 from menu.menu_clientes import menu_principal
 from menu.menu_produtos import menuDeProdutos
-from menu.menu_pedido import cadastro_novoPedido
+from menu.menu_pedido import menuDePedidos
 
 
 while True:
@@ -20,7 +20,7 @@ while True:
     elif opcao == "2":
         menuDeProdutos()
     elif opcao == "3":
-        cadastro_novoPedido()    
+        menuDePedidos()    
     elif opcao == "4":
         print("FUNÇÃO EM DESENVOLVIMENTO")
     elif opcao == "5":

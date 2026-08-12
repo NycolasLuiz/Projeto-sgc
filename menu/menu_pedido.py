@@ -30,6 +30,7 @@ def cadastro_novoPedido():
         print(f"PRODUTOS: {produtos}")
     else:
         print("NÃO FOI POSSÍVEL CADASTRAR O PEDIDO.")
+    menu_secundario()
 
 #def opcaoes_produtos():
     
@@ -40,4 +41,85 @@ def cadastro_novoPedido():
 #        print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
 #        print('_'*62)
 
+
+def linha():
+    print("=" * 62)
+
+
+def cabecalho(titulo):
+    linha()
+    print(titulo.center(62))
+    linha()
+
+
+def rodape():
+    linha()
+
+
+def pedir_opcao():
+    rodape()
+    return input("Digite a opção: ").strip()
+
+
+def mensagem(texto):
+    print(f"\n{texto}\n")
+
+
+def menuDePedidos():
+    while True:
+
+        cabecalho("MENU DE PEDIDO")
+
+        print("1 - CADASTRAR PEDIDO")
+        print("2 - EM DESENVOLVIMENTO")
+        print("3 - EM DESENVOLVIMENTO")
+        print("4 - EM DESENVOLVIMENTO")
+        print("5 - EM DESENVOLVIMENTO")
+        print("0 - VOLTAR")
+
+        opcao = pedir_opcao()
+
+        if opcao == "1":
+            cadastro_novoPedido()
+
+        elif opcao == "2":
+            print("EM DESENVOLVIMENTO")
+
+        elif opcao == "3":
+            print("EM DESENVOLVIMENTO")
+
+        elif opcao == "4":
+            print("EM DESENVOLVIMENTO")
+
+        elif opcao == "5":
+            print("EM DESENVOLVIMENTO")
+
+        elif opcao == "0":
+            mensagem("Voltando ao menu principal...")
+            break
+
+        else:
+            mensagem("ERRO! ESCOLHA UMA OPÇÃO VÁLIDA.")
+
+
+def menu_secundario():
+
+    while True:
+
+        cabecalho("MENU")
+
+        print("1 - VOLTAR")
+        print("0 - SAIR")
+
+        opcao = pedir_opcao()
+
+        if opcao == "1":
+            return
+
+        elif opcao == "0":
+            print("Saindo...")
+            exit()
+
+        else:
+            mensagem("ERRO! ESCOLHA UMA OPÇÃO VÁLIDA.")
 
