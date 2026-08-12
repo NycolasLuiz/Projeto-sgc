@@ -32,14 +32,15 @@ def cadastro_novoPedido():
         print("NÃO FOI POSSÍVEL CADASTRAR O PEDIDO.")
     menu_secundario()
 
-#def opcaoes_produtos():
+def opcaoes_produtos():
     
-#    print("=" * 62)
-#    listagem = pedido_service.lista_produtos()
+    linha()
+    catalogo = pedido_service.lista_produtos()
    
-#    for produtos in listagem:
-#        print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
-#        print('_'*62)
+    for produtos in catalogo:
+        print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
+        print('_'*62)
+    linha()    
 
 
 def linha():
@@ -71,7 +72,7 @@ def menuDePedidos():
         cabecalho("MENU DE PEDIDO")
 
         print("1 - CADASTRAR PEDIDO")
-        print("2 - EM DESENVOLVIMENTO")
+        print("2 - CATÁLOGO DE PRODUTOS")
         print("3 - EM DESENVOLVIMENTO")
         print("4 - EM DESENVOLVIMENTO")
         print("5 - EM DESENVOLVIMENTO")
@@ -83,7 +84,7 @@ def menuDePedidos():
             cadastro_novoPedido()
 
         elif opcao == "2":
-            print("EM DESENVOLVIMENTO")
+            opcaoes_produtos()
 
         elif opcao == "3":
             print("EM DESENVOLVIMENTO")

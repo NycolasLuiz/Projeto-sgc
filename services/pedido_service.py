@@ -42,9 +42,9 @@ def cadastro_novoPedido(clienteTelefone, produtos):
 
     return novoPedido
 
-#def busca_catalogo():
-#    listagem = produto_repository.listagemDePodutos()
-#    return listagem
+def lista_produtos():
+    listagem = produto_repository.listagemDePodutos()
+    return listagem 
     
     
     
