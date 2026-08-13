@@ -1,7 +1,5 @@
 from services import pedido_service
 
-#fazer função para listar produtos e colocar dentro de um menu de escolha 
-#fazer menu de seleção para o momento do pedido 
 def cadastro_novoPedido():
 
     clienteTelefone = input("INFORME O TELEFONE DO CLIENTE: ")
@@ -40,7 +38,19 @@ def opcaoes_produtos():
     for produtos in catalogo:
         print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
         print('_'*62)
-    linha()    
+    linha()
+    
+def cancela_pedido():
+    id_pedido = int (input ("INFORME O ID DO PEDIDO: "))
+
+    remove = pedido_service.cancelaCadastro(id_pedido)
+    
+    if remove:
+        print("PRODUTO DELETADO COM SUCESSO!")
+    else:
+        print("ERRO, ID NÃO ENCONTRADO...")
+    menu_secundario()    
+        
 
 
 def linha():
@@ -73,7 +83,7 @@ def menuDePedidos():
 
         print("1 - CADASTRAR PEDIDO")
         print("2 - CATÁLOGO DE PRODUTOS")
-        print("3 - EM DESENVOLVIMENTO")
+        print("3 - CANCELAR PEDIDO")
         print("4 - EM DESENVOLVIMENTO")
         print("5 - EM DESENVOLVIMENTO")
         print("0 - VOLTAR")
@@ -87,7 +97,7 @@ def menuDePedidos():
             opcaoes_produtos()
 
         elif opcao == "3":
-            print("EM DESENVOLVIMENTO")
+            cancela_pedido()
 
         elif opcao == "4":
             print("EM DESENVOLVIMENTO")

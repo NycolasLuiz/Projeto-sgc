@@ -37,13 +37,14 @@ def atualiza_pedido(id_pedido):#aguardando parametros do serveces
             return pedido
     return 
 
-def delete_pedido(id_pedido):#usar o mesmo parametro no serveces
+def delete_pedido(id_pedido):
     registro_pedidos  = carrega_pedidos()
     atualiza_registroPedidos = [pedido for pedido in registro_pedidos if pedido['id_pedido'] != id_pedido]
     if atualiza_registroPedidos != registro_pedidos:
         salva_pedido(atualiza_registroPedidos)
         return True
     return False
+
 def Busca_pedido(id_informado):#usar o mesmo parametro no serveces
     registro_pedidos  = carrega_pedidos()
     for pedido in registro_pedidos:

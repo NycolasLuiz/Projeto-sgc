@@ -46,6 +46,10 @@ def lista_produtos():
     listagem = produto_repository.listagemDePodutos()
     return listagem 
     
+def cancelaCadastro(id_pedido):
+    atualiza =  pedido_repository.delete_pedido(id_pedido)
+    return atualiza
+
     
     
 
