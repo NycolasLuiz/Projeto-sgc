@@ -50,7 +50,9 @@ def cancelaCadastro(id_pedido):
     atualiza =  pedido_repository.delete_pedido(id_pedido)
     return atualiza
 
-    
+def alteraPedido(id_pedido,alteraCliente,novo_iten):
+    atualiza = pedido_repository.atualiza_pedido(id_pedido,alteraCliente,novo_iten)
+    return atualiza     
     
 
     

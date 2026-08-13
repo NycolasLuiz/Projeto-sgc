@@ -25,14 +25,14 @@ def cadastro_novoPedido(novoPedido):#usar o mesmo parametro no serveces
     registro_pedidos.append(novoPedidoDICT)
     salva_pedido(registro_pedidos)
 
-def atualiza_pedido(id_pedido):#aguardando parametros do serveces
+def atualiza_pedido(id_pedido,alteraCliente,novo_iten):
     registro_pedidos  = carrega_pedidos()
     for pedido in registro_pedidos:
         if pedido['id_pedido'] == id_pedido:
-            pedido['cliente']# =objeto vindo do menu/service
-            pedido['itens_pedido']# = bjeto vindo do menu/service
-            pedido['valor_total']# =objeto vindo do menu/service
-            pedido['forma_pagamento']# = objeto vindo do menu/service
+            pedido['cliente'] = alteraCliente
+            pedido['itens_pedido'] = novo_iten
+            #pedido['valor_total']=objeto vindo do menu/service
+            #pedido['forma_pagamento']= objeto vindo do menu/service
             salva_pedido(registro_pedidos)
             return pedido
     return 

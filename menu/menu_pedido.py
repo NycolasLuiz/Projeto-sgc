@@ -1,5 +1,6 @@
 from services import pedido_service
 
+#ajustar função para permitir somente 1 produto
 def cadastro_novoPedido():
 
     clienteTelefone = input("INFORME O TELEFONE DO CLIENTE: ")
@@ -39,6 +40,26 @@ def opcaoes_produtos():
         print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
         print('_'*62)
     linha()
+    
+def altera_produto():
+    id_pedido = int (input("INFORME O ID DO PEDIDO: "))    
+    alteraCliente = input("INFORME O TELEFONE (DDD)999999999: ").strip()
+    if not alteraCliente:
+        print("ERRO!")
+        return
+    elif not len(alteraCliente) == 11:
+        print("ERRO!")
+        return    
+    novo_iten = input("NOVO PRODUTO:  ")
+
+    atualizacao = pedido_service.alteraPedido(id_pedido,alteraCliente,novo_iten)
+
+    if atualizacao:
+        print(f"TELEFONE:{atualizacao['telefone']}\n PRODUTO: {atualizacao['nome']}")
+    else:
+        print("ERRO, PRODUTO NÃO ENCONTRADO!")
+
+    menu_secundario()    
     
 def cancela_pedido():
     id_pedido = int (input ("INFORME O ID DO PEDIDO: "))
