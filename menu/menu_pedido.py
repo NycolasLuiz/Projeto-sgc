@@ -32,14 +32,12 @@ def cadastro_novoPedido():
     menu_secundario()
 
 def opcaoes_produtos():
-    
-    linha()
     catalogo = pedido_service.lista_produtos()
    
     for produtos in catalogo:
         print(f"PRODUTO: {produtos['nome']} \n VALOR:{produtos['preco']}")
         print('_'*62)
-    linha()
+    menu_secundario()
     
 def altera_produto():
     id_pedido = int (input("INFORME O ID DO PEDIDO: "))    
