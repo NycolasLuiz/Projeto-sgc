@@ -47,26 +47,6 @@ def opcaoes_produtos():
         print('_'*62)
     menu_secundario()
     
-def altera_pedido():
-    id_pedido = int (input("INFORME O ID DO PEDIDO: "))    
-    alteraCliente = input("INFORME O TELEFONE (DDD)999999999: ").strip()
-    if not alteraCliente:
-        print("ERRO!")
-        return
-    elif not len(alteraCliente) == 11:
-        print("ERRO!")
-        return    
-    novo_iten = input("NOVO PRODUTO:  ")
-
-    atualizacao = pedido_service.alteraPedido(id_pedido,alteraCliente,novo_iten)
-
-    if atualizacao:
-        print(f"TELEFONE:{atualizacao['telefone']}\n PRODUTO: {atualizacao['nome']}")
-    else:
-        print("ERRO, PRODUTO NÃO ENCONTRADO!")
-
-    menu_secundario()    
-    
 def cancela_pedido():
     id_pedido = int (input ("INFORME O ID DO PEDIDO: "))
 
@@ -78,7 +58,21 @@ def cancela_pedido():
         print("ERRO, ID NÃO ENCONTRADO...")
     menu_secundario()    
         
-
+def procura_pedido():
+    id_informado= int(input("INFORME O ID DO PEDIDO: "))
+    pedido = pedido_service.buscaDePedido(id_informado)       
+    if pedido:
+        print(f"PEDIDO: #{pedido['id_pedido']}")
+        print(f"CLIENTE: {pedido['cliente']}")
+        print(f"VALOR TOTAL: R$ {pedido['valor_total']}")
+        print('-'*62)
+        print("PRODUTOS:")
+        for produto in {['itens_pedido']}:
+            print(f"- {produto['nome']} | R$ {produto['preco']:.2f}")
+        print('='*62)   
+    else:
+        print("ERRO, PEDIDO NÃO ENCONTRADO...")
+    menu_secundario()
 
 def linha():
     print("=" * 62)
@@ -111,7 +105,7 @@ def menuDePedidos():
         print("1 - CADASTRAR PEDIDO")
         print("2 - CATÁLOGO DE PRODUTOS")
         print("3 - CANCELAR PEDIDO")
-        print("4 - EM DESENVOLVIMENTO")
+        print("4 - BUSCA PEDIDO")
         print("5 - EM DESENVOLVIMENTO")
         print("0 - VOLTAR")
 
@@ -127,7 +121,7 @@ def menuDePedidos():
             cancela_pedido()
 
         elif opcao == "4":
-            print("EM DESENVOLVIMENTO")
+            procura_pedido()
 
         elif opcao == "5":
             print("EM DESENVOLVIMENTO")
