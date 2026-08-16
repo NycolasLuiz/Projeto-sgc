@@ -17,6 +17,7 @@ def cadastro_novoPedido(clienteTelefone, produtos):
         return None
 
     itens_pedido = []
+    valor_total = 0
 
     for nome_produto in produtos:
 
@@ -26,8 +27,7 @@ def cadastro_novoPedido(clienteTelefone, produtos):
             return None
 
         itens_pedido.append(busca_produto)
-
-    valor_total = 0
+        valor_total +=busca_produto['preco']
 
     novoPedido = Pedido(
         id_pedido,

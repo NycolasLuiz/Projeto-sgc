@@ -23,13 +23,21 @@ def cadastro_novoPedido():
         clienteTelefone,
         produtos
     )
-
     if registroPedido:
-        print(f"PEDIDO CADASTRADO COM SUCESSO!")
-        print(f"PRODUTOS: {produtos}")
+        print('='*62)
+        print("PEDIDO CADASTRADO COM SUCESSO!")
+        print('-'*62)
+        print(f"PEDIDO: #{registroPedido.id_pedido}")
+        print(f"CLIENTE: {registroPedido.cliente['nome']}")
+        print(f"VALOR TOTAL: R$ {registroPedido.valor_total:.2f}")
+        print('-'*62)
+        print("PRODUTOS:")
+        for produto in registroPedido.itens_pedido:
+            print(f"- {produto['nome']} | R$ {produto['preco']:.2f}")
+        print('='*62)    
     else:
         print("NÃO FOI POSSÍVEL CADASTRAR O PEDIDO.")
-    menu_secundario()
+        menu_secundario()
 
 def opcaoes_produtos():
     catalogo = pedido_service.lista_produtos()
@@ -39,7 +47,7 @@ def opcaoes_produtos():
         print('_'*62)
     menu_secundario()
     
-def altera_produto():
+def altera_pedido():
     id_pedido = int (input("INFORME O ID DO PEDIDO: "))    
     alteraCliente = input("INFORME O TELEFONE (DDD)999999999: ").strip()
     if not alteraCliente:
