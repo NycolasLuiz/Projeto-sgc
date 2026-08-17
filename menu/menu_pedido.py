@@ -28,6 +28,7 @@ def cadastro_novoPedido():
         print("PEDIDO CADASTRADO COM SUCESSO!")
         print('-'*62)
         print(f"PEDIDO: #{registroPedido.id_pedido}")
+        print(f"DATA: {registroPedido.data_pedido}")
         print(f"CLIENTE: {registroPedido.cliente['nome']}")
         print(f"VALOR TOTAL: R$ {registroPedido.valor_total:.2f}")
         print('-'*62)
