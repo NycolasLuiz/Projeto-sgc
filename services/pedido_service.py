@@ -5,7 +5,7 @@ from repositories import produto_repository
 from datetime import date
 
 
-def cadastro_novoPedido(clienteTelefone, produtos):
+def cadastro_novoPedido(clienteTelefone, produtos,forma_pagamento):
 
     id_pedido = pedido_repository.geradorDeId()
 
@@ -35,7 +35,7 @@ def cadastro_novoPedido(clienteTelefone, produtos):
         itens_pedido,
         valor_total,
         data_Pedido,
-        None
+        forma_pagamento
     )
 
     pedido_repository.cadastro_novoPedido(novoPedido)

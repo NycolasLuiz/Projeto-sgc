@@ -19,9 +19,28 @@ def cadastro_novoPedido():
 
         addProduto = input("ADICIONAR MAIS UM PRODUTO? (S/N): ").lower()
 
+
+    opcao = ['1', '2', '3', '4']
+
+    while True:
+        print("--------------FORMAS DE PAGAMENTO-----------------")
+        print("1 - DINHEIRO")
+        print("2 - PIX")
+        print("3 - CRÉDITO")
+        print("4 - DÉBITO")
+        print("--------------------------------------------------")
+
+        forma_pagamento = input("FORMA DESEJADA: ")
+
+        if forma_pagamento in opcao:
+            break
+
+        print("Opção inválida. Escolha uma opção de 1 a 4.")
+
     registroPedido = pedido_service.cadastro_novoPedido(
         clienteTelefone,
-        produtos
+        produtos,
+        forma_pagamento
     )
     if registroPedido:
         print('='*62)
@@ -31,6 +50,7 @@ def cadastro_novoPedido():
         print(f"DATA: {registroPedido.data_pedido}")
         print(f"CLIENTE: {registroPedido.cliente['nome']}")
         print(f"VALOR TOTAL: R$ {registroPedido.valor_total:.2f}")
+        print(f"FORMA DE PAGAMENTO: {registroPedido.forma_pagamento}")
         print('-'*62)
         print("PRODUTOS:")
         for produto in registroPedido.itens_pedido:

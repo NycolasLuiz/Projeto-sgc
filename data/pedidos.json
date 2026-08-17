@@ -405,5 +405,62 @@
         "valor_total": 5.0,
         "data_pedido": "2026-08-17",
         "forma_pagamento": null
+    },
+    {
+        "id_pedido": 18,
+        "cliente": {
+            "id": "c94f3019-07a1-4206-8320-712606228331",
+            "nome": "Nycolas",
+            "telefone": "47984934737"
+        },
+        "itens_pedido": [
+            {
+                "id": 6,
+                "nome": "produto teste 2",
+                "preco": 5.0,
+                "estoque": 5
+            }
+        ],
+        "valor_total": 5.0,
+        "data_pedido": "2026-08-17",
+        "forma_pagamento": "1"
+    },
+    {
+        "id_pedido": 19,
+        "cliente": {
+            "id": "c94f3019-07a1-4206-8320-712606228331",
+            "nome": "Nycolas",
+            "telefone": "47984934737"
+        },
+        "itens_pedido": [
+            {
+                "id": 6,
+                "nome": "produto teste 2",
+                "preco": 5.0,
+                "estoque": 5
+            }
+        ],
+        "valor_total": 5.0,
+        "data_pedido": "2026-08-17",
+        "forma_pagamento": "1"
+    },
+    {
+        "id_pedido": 20,
+        "cliente": {
+            "id": "c94f3019-07a1-4206-8320-712606228331",
+            "nome": "Nycolas",
+            "telefone": "47984934737"
+        },
+        "itens_pedido": [
+            {
+                "id": 6,
+                "nome": "produto teste 2",
+                "preco": 5.0,
+                "estoque": 5
+            }
+        ],
+        "valor_total": 5.0,
+        "data_pedido": "2026-08-17",
+        "forma_pagamento": "2"
     }
 ]
