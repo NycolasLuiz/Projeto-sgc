@@ -8,8 +8,6 @@ while True:
     print(" 1 - MENU/CLIENTES")
     print(" 2 - MENU/PRODUTOS")
     print(" 3 - MENU/PEDIDO")
-    print(" 4 - MENU/COMISSÃO")
-    print(" 5 - VOLTAR")
     print(" 0 - SAIR")
     print("="*62)
     
@@ -20,11 +18,7 @@ while True:
     elif opcao == "2":
         menuDeProdutos()
     elif opcao == "3":
-        menuDePedidos()    
-    elif opcao == "4":
-        print("FUNÇÃO EM DESENVOLVIMENTO")
-    elif opcao == "5":
-        continue    
+        menuDePedidos()        
     elif opcao == "0":
         print("SAINDO....")
         break
